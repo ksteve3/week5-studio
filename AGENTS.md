@@ -54,7 +54,9 @@ directing the agent. Do not assume which partner completed an action.
 - Each entry: date, partner directing, agent used (Codex or
   Claude Code), what was done, files changed, commit hash, test
   commands and their actual results, and any open questions.
-- Commit the log entry with the work it describes.
+- Commit work-log and team-note updates separately from code changes, right
+  after the work they describe. This rule does not authorize commits or pushes
+  without my permission.
 - Record only what actually happened. Do not invent results,
   agreements, or contributions.
 
@@ -83,13 +85,13 @@ directing the agent. Do not assume which partner completed an action.
 ## Week 5 studio - assignment-specific rules
 
 I apply this section only to Week 5 Studio; I do not copy it into other projects.
-I am including rule cards 1, 2, 3, 4, 5, and 9. I still need to confirm the
-selection with Mike; this update does not record a joint implementation agreement.
+My partner and I have confirmed rule cards 1, 2, 3, 4, 5, and 9, and excluded
+cards 6, 7, and 8. Our implementation plan still requires agreement.
 
 - Card 1: I require the agent to read relevant code before proposing changes.
-- Card 2: I require a plan and agreement from Mike and me before code edits.
+- Card 2: I require a plan and agreement from my partner and me before code edits.
 - Card 3: I require existing behavior to be preserved during refactoring.
-- Card 4: I require the supplied evaluation before and after changes. My saved
+- Card 4: I require the supplied evaluation before and after changes. The saved
   original baseline already records the before result; I must not recreate it.
 - Card 5: I require an explanation of each extracted function's parameters,
   return value, and call sites.
@@ -104,10 +106,11 @@ I preserve these instructor task limits regardless of rule selection:
   unchanged. I never overwrite, delete, or recreate the saved baseline.
 - I add no dependencies, live model calls, or features. I do not change expected
   answers or fix the known sixth-case limitation during this refactoring.
-- I compare independent proposals with Mike and record the agreed plan in
+- I compare independent proposals with my partner and record the agreed plan in
   TEAM_NOTES.md before implementation, with at most two small function extractions.
 - I use one shared working copy with the original baseline. I follow the
-  instructor's directing/reviewing role swap with Mike between extractions.
+  instructor's directing/reviewing role swap with my partner between extractions.
 - I run python evaluate.py --after after each extraction and for final verification.
   I expect 5/6 correct AND PASS, including matching selections and candidate scores.
-- I keep required work-log and team-note updates separate from code refactoring.
+- I commit work-log and team-note updates separately from code changes, right
+  after the work they describe, following the Work log section.

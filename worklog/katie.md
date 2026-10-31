@@ -38,3 +38,24 @@ I authorized Codex to commit and push my log to main after reviewing Git status,
   final diff. I did not run the evaluator because I made no code changes.
 - **Open questions:** I still need to confirm the rule selection and agree on an
   implementation plan with Mike. I have not relocated the shared general rules.
+
+## 2026-10-31 - Recording confirmed rules and clarifying commit policy
+
+- **Partner directing:** Katie (ksteve3).
+- **Agent used:** Codex.
+- **What I did:** I provided Mike's confirmation of cards 1, 2, 3, 4, 5, and 9
+  and exclusion of 6, 7, and 8. I updated AGENTS.md to record that confirmation.
+  I adopted his proposed policy: I commit work-log and team-note updates
+  separately from code changes, immediately after the work they describe.
+  I aligned both rule sections and changed Week 5 wording to work for either
+  directing partner. I did not record an agreed implementation plan.
+- **Files changed:** AGENTS.md and worklog/katie.md.
+- **Commit hash:** My starting revision was b282aa50a28ea095618a083ee06748392a1d4bb4.
+  I subsequently authorized Codex to commit and push these documentation updates. The recording commit is the commit containing this entry.
+- **Checks and actual results:** I checked Git status and the remote main ref;
+  both pointed to the starting revision, with only __pycache__/ untracked.
+  SHA-256 comparisons passed for baseline.json, the six instructor files,
+  Mike's log, and CLAUDE.md. I reviewed the final diff and ran git diff --check.
+  I did not run the evaluator because I changed no code.
+- **Open questions:** I still need to compare refactoring proposals with my
+  partner and agree on an implementation plan. I have not moved the general rules.
