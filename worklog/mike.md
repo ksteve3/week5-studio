@@ -30,3 +30,28 @@ under "Work log".
   - Which rule cards go into AGENTS.md for Part 1 (Katie suggested
     1–5 and 9).
   - Whether to restore the Week 5 task limits to AGENTS.md.
+
+## 2026-10-31 - Reviewing Katie's Week 5 rules
+
+- **Directing:** Mike
+- **Agent:** Claude Code
+- **What was done:**
+  - Pulled Katie's commit b282aa5 (Week 5 section in AGENTS.md) and
+    checked it against RULE_CARDS.md and the studio README. It
+    includes cards 1, 2, 3, 4, 5 and 9 and all instructor task limits.
+  - **Decision:** I confirm rule cards 1, 2, 3, 4, 5 and 9, and
+    excluding cards 6, 7 and 8.
+  - Sent Katie a reply raising two wording issues, leaving the edits
+    to her: (1) her line keeping work-log updates "separate from code
+    refactoring" conflicts with the Work log rule to "commit the log
+    entry with the work it describes"; (2) "with Mike" and "My saved
+    original baseline" read incorrectly when I am directing.
+- **Files changed:** worklog/mike.md (this entry only). I did not edit
+  AGENTS.md or Katie's log.
+- **Commits:** reviewed b282aa5; this entry is in the commit that
+  contains it.
+- **Tests:** none run; no code changed.
+- **Follow-up:** Katie resolved both issues in 4137bc2 (log updates are
+  now committed separately from code changes, and the Week 5 wording
+  says "my partner"). AGENTS.md now records the confirmed cards.
+- **Open questions:** comparing our independent refactor proposals.
