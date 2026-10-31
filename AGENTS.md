@@ -45,6 +45,19 @@ directing the agent. Do not assume which partner completed an action.
 - Commit only the intended files. Do not include unrelated changes.
 - Do not overwrite Mike's work or my work without explicit permission.
 
+## Work log
+
+- After each work session that changes files or makes a decision,
+  add an entry to the directing partner's file in worklog/
+  (worklog/mike.md or worklog/katie.md). Create the file if it does
+  not exist. Never edit the other partner's log file.
+- Each entry: date, partner directing, agent used (Codex or
+  Claude Code), what was done, files changed, commit hash, test
+  commands and their actual results, and any open questions.
+- Commit the log entry with the work it describes.
+- Record only what actually happened. Do not invent results,
+  agreements, or contributions.
+
 ## Automatic setup for future projects
 
 - When I ask an agent to create or set up a TECHIN 509 or MSTI project,
