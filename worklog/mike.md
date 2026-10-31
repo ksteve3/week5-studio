@@ -128,3 +128,32 @@ under "Work log".
 - **Open questions:** Windows line-ending conversion can change
   eval_cases.json bytes and make `--after` FAIL; propose a
   .gitattributes rule with Katie. Next: I direct Extraction 2.
+
+## 2026-10-31 - Extraction 2 (cosine_similarity)
+
+- **Directing:** Mike (Student B); Katie reviews.
+- **Agent:** Claude Code
+- **What was done:**
+  - Pulled main at 82499f7 (Katie's Extraction 1 plus my approval).
+  - Added `cosine_similarity(first_vector, second_vector)`, which returns
+    one float and 0.0 if either vector is all zeros. It uses the original
+    loop, the same arithmetic order `dot / (sqrt(a) * sqrt(b))` and the
+    same zero check. Only local names changed (nq/na → first_norm,
+    nv/nb → second_norm).
+  - Replaced both call sites: the scoring block in `search` and the
+    scoring block in `compare_texts`. No old cosine code remains.
+    text_to_vector, data, interfaces, return shapes and the strict `>`
+    tie-break are unchanged.
+  - A practice run of the same change in a scratch folder outside the
+    repo also passed; it was not committed.
+- **Files changed:** search.py (code commit 584a1c9); worklog/mike.md
+  (this entry, separate commit). after.json was rewritten by the
+  evaluator with identical content, so Git shows no change.
+- **Commits:** 584a1c9 (Extraction 2); the commit containing this entry.
+- **Tests:** eval_cases.json checked first: LF endings, hash matches
+  baseline. `python search.py` → selects password (0.7071).
+  `python evaluate.py --after` → 5/6 correct, "PASS: results and
+  scores match baseline.", exit code 0. `git diff --check` clean.
+- **Open questions:** Katie's review of Extraction 2. Then Part 3: I run
+  the final `--after` check, Katie compares it with the baseline, and we
+  fill in the After and Behavior check lines in TEAM_NOTES.md.
