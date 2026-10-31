@@ -19,3 +19,22 @@
 ### Log publication authorization
 
 I authorized Codex to commit and push my log to main after reviewing Git status, unstaged changes, staged changes, and the remote main revision. Only worklog/katie.md is included. I made no code changes, so I did not rerun the evaluator. My implementation plan with Mike is still pending agreement.
+
+## 2026-10-31 - Adding explicit Week 5 rules
+
+- **Partner directing:** Katie (ksteve3).
+- **Agent used:** Codex.
+- **What I did:** I authorized a Week 5 section in AGENTS.md. I included cards
+  1, 2, 3, 4, 5, and 9 and the instructor task limits, while preserving the shared
+  general rules, automatic setup rules, and work-log requirements. I left the
+  rule selection pending confirmation with Mike and did not claim a joint plan.
+- **Files changed:** AGENTS.md and worklog/katie.md. I did not edit Mike's log.
+- **Commit hash:** My starting revision was 3c113cbc90a3d48b044e4ef41f146339faf1b284.
+  I subsequently authorized committing and pushing this update. The recording commit is the commit containing this entry.
+- **Checks and actual results:** I checked Git status and the remote main ref;
+  both pointed to my starting revision, with only __pycache__/ untracked before
+  editing. SHA-256 comparisons confirmed the baseline, six instructor files,
+  Mike's log, and CLAUDE.md were unchanged. I reviewed git diff --check and the
+  final diff. I did not run the evaluator because I made no code changes.
+- **Open questions:** I still need to confirm the rule selection and agree on an
+  implementation plan with Mike. I have not relocated the shared general rules.
