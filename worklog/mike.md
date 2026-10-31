@@ -97,3 +97,34 @@ under "Work log".
 - **Tests:** none run; no code changed. Before score 5/6 comes from
   baseline.json.
 - **Open questions:** none for the plan. Next: Katie directs extraction 1.
+
+## 2026-10-31 - Reviewing Extraction 1 (text_to_vector)
+
+- **Directing:** Mike (reviewer for Extraction 1)
+- **Agent:** Claude Code
+- **What was done:**
+  - Pulled Katie's 12aca65 (search.py) and 78d0460 (after.json, her log).
+  - Reviewed the diff against the agreed plan:
+    - Input: `text_to_vector(text)` takes one string. ✅
+    - Return value: list of VOCAB word counts in VOCAB order, with the
+      original cleanup steps in the original order (strip, lower,
+      remove `?`, remove `.`). ✅
+    - Call sites: all four replaced (query and each FAQ in `search`,
+      both texts in `compare_texts`); no old cleanup or counting code
+      left. Cosine code, data, interfaces and tie-break unchanged. ✅
+    - Two old "intentionally awkward" comments were removed; no
+      behavior effect.
+  - Confirmed evaluate.py, eval_cases.json and baseline.json are
+    unchanged in Git.
+  - **Decision:** I approve Extraction 1.
+- **Files changed:** worklog/mike.md (this entry only).
+- **Commits:** reviewed 12aca65 and 78d0460.
+- **Tests:** ran `evaluate.run()` in memory (did not run `--after`, to
+  keep Katie's after.json): 5/6 correct; report equivalent to
+  baseline.json and to Katie's after.json (behavior_preserved: true).
+  My eval_cases.json has LF endings and matches the baseline fixture hash.
+  Spot checks: `text_to_vector("How do I reset my password?")` →
+  `[1, 0, 0, 0, 0, 0, 0, 0]`; `text_to_vector("")` → all zeros.
+- **Open questions:** Windows line-ending conversion can change
+  eval_cases.json bytes and make `--after` FAIL; propose a
+  .gitattributes rule with Katie. Next: I direct Extraction 2.
