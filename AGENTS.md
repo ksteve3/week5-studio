@@ -44,3 +44,25 @@ directing the agent. Do not assume which partner completed an action.
   working-tree and staged diffs before committing.
 - Commit only the intended files. Do not include unrelated changes.
 - Do not overwrite Mike's work or my work without explicit permission.
+
+## Automatic setup for future projects
+
+- When I ask an agent to create or set up a TECHIN 509 or MSTI project,
+  automatically include these shared rules in AGENTS.md at the new
+  project's root and create CLAUDE.md containing only @AGENTS.md.
+- My request to create or set up the project includes permission to add
+  these two instruction files when they do not already exist; do not ask
+  me to copy them manually or request separate approval for that setup.
+- Use the latest general rules from the main branch of
+  https://github.com/ksteve3/week5-studio as the shared source, including
+  this automatic setup section. If that source is unavailable, use the
+  loaded copy and clearly report that its freshness could not be verified.
+- Read existing project and instructor instructions first. If instruction
+  files already exist, preserve their content and assignment constraints;
+  explain the proposed merge and obtain my approval before replacing or
+  changing shared instructions. Do not overwrite another person's work.
+- Confirm which instruction files were created and that CLAUDE.md imports
+  the adjacent AGENTS.md. Follow those rules for the new project.
+- This setup permission does not authorize publishing a new repository,
+  changing access, committing, or pushing unless I have requested those
+  actions. Do not copy assignment-specific restrictions to other projects.
