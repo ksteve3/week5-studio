@@ -130,3 +130,102 @@ I authorized Codex to commit and push my log to main after reviewing Git status,
 - **Open questions:** I approved the proposed documentation commit and push.
   Mike and I still need to compare proposals and agree
   on an implementation plan before refactoring.
+
+## 2026-10-31 - Extraction 1 prepared; evaluation blocked by checkout line endings
+
+- **Partner directing:** Katie (Student A, ksteve3).
+- **Agent used:** Codex. Mike (Student B) is assigned to review; I have not
+  claimed his review is complete.
+- **What I did:** I pulled Mike's agreed plan through 37c89de and verified the
+  unchanged starter before editing. I extracted text_to_vector(text), preserving
+  cleanup order and VOCAB counting, and replaced four text-processing sites.
+  I left both cosine calculations, data, interfaces, and tie-breaking unchanged.
+- **Files changed:** search.py; the evaluator created after.json; I appended
+  this entry to worklog/katie.md. I did not edit evaluator, cases, baseline,
+  team notes, or Mike's log. __pycache__/ remains untracked.
+- **Commit hash:** Starting revision 37c89de; no extraction commit yet.
+- **Checks and actual results:** `git pull --ff-only origin main` succeeded.
+  The pre-edit instructor fingerprint passed, and protected-file hashes were
+  unchanged by the pull. `python evaluate.py --after` returned 5/6 and FAIL.
+  I diagnosed only fixture_sha256 differing: baseline expects LF case-file
+  bytes, while Git checked out CRLF. LF-normalized hash equals the baseline's
+  hash. A read-only in-memory run of HEAD's original starter also fails against
+  this baseline; the extraction report exactly matches that starter's report.
+  `git diff --check` passed; protected-file Git diff was empty.
+- **Open questions:** I need approval to restore eval_cases.json to its exact
+  original LF bytes before rerunning the evaluator. I will not change case
+  contents or the evaluator or baseline. Mike's diff review and my approval
+  remain required before committing, pushing, or starting Extraction 2.
+
+## 2026-10-31 - Running the supplementary Extraction 1 diagnostic
+
+- **Partner directing:** Katie (ksteve3).
+- **Agent used:** Codex.
+- **What I did:** I supplied eval-1b.py and asked Codex to save an exact copy
+  and run it. I preserved the original failed after.json and did not rerun the
+  official evaluator. I kept Extraction 1 unchanged while awaiting Mike's review.
+- **Files changed:** eval-1b.py (new supplementary diagnostic) and this entry
+  in worklog/katie.md. I preserved earlier uncommitted work.
+- **Commit hash:** Starting revision 37c89de59a1443c03f6cae72650ed39d0c7fd8d9.
+  I have not authorized a commit or push for this diagnostic session.
+- **Checks and actual results:** `python eval-1b.py` exited 0:
+  DIAGNOSTIC PASS, 5/6 correct, with all behavior matching the baseline after
+  verifying the fixture differs only in CRLF/LF endings. The diagnostic adjusts
+  the fixture hash only in memory after proving the normalized hash matches;
+  it does not change expected answers or saved files. The original official
+  `python evaluate.py --after` result remains 5/6 and FAIL, and is not replaced
+  by this diagnostic result. SHA-256 checks passed for search.py, evaluate.py,
+  eval_cases.json, baseline.json, after.json, TEAM_NOTES.md, and Mike's log.
+  The preserved failed after.json hash is dc1302625393713e2ddab0aea4083bbe17ce76ba6d007815cb3ab2f331f924b8.
+  I reviewed Git diff and status and ran git diff --check on tracked changes.
+- **Open questions:** I still need Mike's review and an instructor-compatible
+  resolution of the fixture line endings before an official PASS. I need approval
+  before committing or pushing. I have not started Extraction 2.
+
+## 2026-10-31 - Restoring the original fixture bytes and official verification
+
+- **Partner directing:** Katie (Student A, ksteve3).
+- **Agent used:** Codex.
+- **What I did:** I authorized restoration of only eval_cases.json directly
+  from origin/main using Git blob bytes. I backed up the local CRLF fixture
+  and original failed after.json outside the repository at C:\Users\krste\projects\week5-studio-backup-20261031-163006.
+  I verified the GitHub blob exactly matches the baseline fixture hash before
+  writing it. I changed no questions or expected answers.
+- **Files changed:** eval_cases.json now has its exact original LF bytes;
+  the official evaluator updated after.json; I appended this work-log entry.
+  My existing Extraction 1 remains unchanged and awaits Mike's review.
+- **Commit hash:** Starting revision 37c89de59a1443c03f6cae72650ed39d0c7fd8d9.
+  I have not authorized staging, committing, or pushing this session.
+- **Checks and actual results:** I checked status, branch main, and the existing
+  shared remote, then ran git fetch origin. The restored fixture SHA-256 is
+  595290132310ec7eb0da1d2d2798dbd724b61238de3afb1138e01f0512686dbc, matching baseline.json.
+  `python evaluate.py --after` exited 0: 5/6 correct AND PASS;
+  results and scores match baseline. I did not run eval-1b.py.
+  SHA-256 checks confirmed search.py, evaluate.py, baseline.json, TEAM_NOTES.md,
+  Mike's log, and eval-1b.py unchanged. I reviewed Git diffs and status and ran
+  git diff --check. I preserved failed evidence in the outside backup.
+- **Open questions:** I still need Mike's Extraction 1 review and approval
+  before committing or pushing. Extraction 2 has not begun.
+
+## 2026-10-31 - Publishing Extraction 1 for Mike's review
+
+- **Partner directing:** Katie (Student A, ksteve3).
+- **Agent used:** Codex.
+- **What I did:** I authorized pushing Extraction 1 for Mike's review. I reviewed
+  the search.py diff and staged only that file for the code commit. I have not
+  claimed Mike's review is complete and have not begun Extraction 2.
+- **Files changed:** search.py was committed separately. This documentation
+  commit includes worklog/katie.md and the official passing after.json report.
+  I left eval-1b.py and __pycache__/ untracked and excluded eval_cases.json.
+- **Commit hash:** I committed and pushed Extraction 1 as
+  12aca650f159f7a0e6c5e67329372f4375d36bb5, with the message
+  "I extract text_to_vector for Week 5 studio". This entry is recorded in the
+  following documentation commit.
+- **Checks and actual results:** I reviewed unstaged and staged changes and
+  checked the remote main ref before committing. The staged diff check passed.
+  The code push succeeded. My previous official evaluation returned 5/6 AND
+  PASS; I verified after.json records behavior_preserved=true and correct=5.
+  I rechecked that the restored fixture hash matches baseline.json. I made no
+  additional code edits and did not rerun the supplementary diagnostic.
+- **Open questions:** I await Mike's review before he directs Extraction 2.
+  The earlier failed evaluation evidence remains in the outside backup.
