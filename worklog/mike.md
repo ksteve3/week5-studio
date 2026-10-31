@@ -78,3 +78,22 @@ under "Work log".
 - **Tests:** none run; no code changed.
 - **Open questions:** agree on function names with Katie, record the
   plan in TEAM_NOTES.md, and decide who directs each extraction.
+
+## 2026-10-31 - Recording the agreed plan
+
+- **Directing:** Mike
+- **Agent:** Claude Code
+- **What was done:**
+  - Katie reviewed my proposal and suggested her function names and the
+    roles below. **Decision:** I agreed to use `text_to_vector(text)` and
+    `cosine_similarity(first_vector, second_vector)`, with Katie (A)
+    directing extraction 1 using Codex while I review, and me (B)
+    directing extraction 2 using Claude Code while Katie reviews.
+  - Filled in TEAM_NOTES.md with both proposals, the agreed plan and the
+    before score (5/6). After score and behavior check left blank.
+- **Files changed:** TEAM_NOTES.md; worklog/mike.md (this entry).
+  search.py was not changed.
+- **Commits:** the TEAM_NOTES.md commit and this log commit.
+- **Tests:** none run; no code changed. Before score 5/6 comes from
+  baseline.json.
+- **Open questions:** none for the plan. Next: Katie directs extraction 1.
