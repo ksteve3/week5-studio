@@ -55,3 +55,26 @@ under "Work log".
   now committed separately from code changes, and the Week 5 wording
   says "my partner"). AGENTS.md now records the confirmed cards.
 - **Open questions:** comparing our independent refactor proposals.
+
+## 2026-10-31 - Independent refactoring proposal
+
+- **Directing:** Mike
+- **Agent:** Claude Code
+- **What was done:**
+  - Had Claude Code explain search.py, then identified the repeated
+    code myself: cleaning (4x), counting vocabulary words (4x), and
+    cosine scoring (2x).
+  - Chose to combine cleaning and counting, so two extractions remove
+    all three repeats: `clean_count(text)` → list of 8 counts, and
+    `score(first, second)` → one number from 0 to 1.
+  - Compared with my agent's independent proposal (`text_to_vector`,
+    `cosine_similarity`): same plan, different names.
+  - Wrote MIKE_PROPOSAL.md as a note for Katie. Wrote it before reading
+    KATIE_PROPOSAL.md (97a6b44), which proposes the same two functions
+    under the agent's names.
+- **Files changed:** MIKE_PROPOSAL.md (new); worklog/mike.md (this entry).
+  search.py and TEAM_NOTES.md were not changed.
+- **Commits:** the MIKE_PROPOSAL.md commit and this log commit.
+- **Tests:** none run; no code changed.
+- **Open questions:** agree on function names with Katie, record the
+  plan in TEAM_NOTES.md, and decide who directs each extraction.
