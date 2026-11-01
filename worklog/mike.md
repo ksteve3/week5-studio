@@ -157,3 +157,23 @@ under "Work log".
 - **Open questions:** Katie's review of Extraction 2. Then Part 3: I run
   the final `--after` check, Katie compares it with the baseline, and we
   fill in the After and Behavior check lines in TEAM_NOTES.md.
+
+## 2026-10-31 - Part 3 final evaluation
+
+- **Directing:** Mike (Student B runs the final check; Katie compares).
+- **Agent:** Claude Code
+- **What was done:**
+  - Katie reported by chat that she reviewed and approved Extraction 2.
+    Her review log and .gitattributes were not yet on GitHub when I
+    pulled (main at 77ef11e); search.py is unchanged since 584a1c9.
+  - Checked eval_cases.json first: LF endings, hash matches baseline.
+  - Ran the final `python evaluate.py --after`.
+- **Files changed:** worklog/mike.md (this entry). after.json was
+  rewritten by the evaluator with identical content (no Git change).
+- **Commits:** checked at 77ef11e; this entry is in its own commit.
+- **Tests:** `python evaluate.py --after` → 5/6 correct, "PASS: results
+  and scores match baseline.", exit code 0. after.json records
+  correct=5 and behavior_preserved=true.
+- **Open questions:** Katie compares the result with the baseline; then
+  we fill in TEAM_NOTES.md (After 5/6, Behavior check PASS), add both
+  names to README.md, and submit the repo link on Canvas.
