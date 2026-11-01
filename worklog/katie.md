@@ -229,3 +229,82 @@ I authorized Codex to commit and push my log to main after reviewing Git status,
   additional code edits and did not rerun the supplementary diagnostic.
 - **Open questions:** I await Mike's review before he directs Extraction 2.
   The earlier failed evaluation evidence remains in the outside backup.
+
+## 2026-10-31 - Reviewing Mike's Extraction 2
+
+- **Partner directing:** Katie (Student A, ksteve3), reviewing Mike's work.
+- **Agent used:** Codex.
+- **What I did:** I pulled through 77ef11e and reviewed Mike's Extraction 2
+  commit 584a1c984b5b53a5a756a3784f852a87c3c5abd7 against its previous version.
+  I verified first_vector and second_vector receive matching VOCAB count lists,
+  the helper returns a float, zero handling is unchanged, and the dot product,
+  squared norms, square roots, and division retain their original order.
+  I verified search calls cosine_similarity(qv, v), and compare_texts returns
+  cosine_similarity(av, bv). I found no change to data, interfaces, return
+  structures, text_to_vector, or strict-greater-than tie-breaking.
+- **Files changed:** The pull brought Mike's search.py and log updates. My only
+  authored change is this log entry. The evaluator rewrote after.json with
+  equivalent content. I did not edit instructor files or TEAM_NOTES.md.
+- **Commit hash:** Review target 584a1c984b5b53a5a756a3784f852a87c3c5abd7;
+  synchronized HEAD 77ef11e. My log entry is uncommitted.
+- **Checks and actual results:** `python evaluate.py --after` returned 5/6 AND
+  PASS, exit 0. I compared every baseline field: fixture_sha256, FAQ data,
+  vocabulary, correct count, results (selections and all similarity scores),
+  and comparison_probes all match; behavior_preserved is true. Spot checks with
+  the first vector zero, second zero, and both zero returned 0.0. Protected-file
+  SHA-256 checks passed across synchronization and evaluation. The LF fixture
+  remained untouched. I ran git diff --check for the log update.
+- **Line endings:** core.autocrlf is true; eval_cases.json is LF in the index
+  and working file, but has no explicit attributes. I recommend the minimal
+  root .gitattributes line `eval_cases.json text eol=lf`. I have not created or
+  changed that file; I need approval first.
+- **Open questions:** My review supports approval of Extraction 2. I prepared
+  a message for Mike; I have not sent it. Mike still needs to perform the final
+  Part 3 verification before I record final PASS in TEAM_NOTES.md. No commit
+  or push is authorized for this session.
+
+## 2026-10-31 - Approving Extraction 2 and preventing fixture conversion
+
+- **Partner directing:** Katie (Student A, ksteve3).
+- **Agent used:** Codex.
+- **What I did:** I approved Mike's Extraction 2 based on my review and official
+  passing evaluation. I authorized adding root .gitattributes containing only
+  `eval_cases.json text eol=lf` to prevent Windows checkout conversion for that
+  fixture. I did not modify case contents or expected answers.
+- **Files changed:** .gitattributes (new) and worklog/katie.md. The official
+  evaluator reran and wrote equivalent after.json content. I preserved earlier
+  uncommitted review notes and did not change code or TEAM_NOTES.md.
+- **Commit hash:** Starting revision 77ef11e760aab8c94b10337d7d7ea85d24a7bbd2.
+  These changes are uncommitted and await my approval before commit or push.
+- **Checks and actual results:** The fixture SHA-256 remains
+  595290132310ec7eb0da1d2d2798dbd724b61238de3afb1138e01f0512686dbc,
+  exactly matching baseline.json. `python evaluate.py --after` returned
+  5/6 correct AND PASS, exit 0. SHA-256 checks confirmed search.py, evaluate.py,
+  baseline.json, eval_cases.json, TEAM_NOTES.md, and Mike's log unchanged.
+  I reviewed Git diff and ran git diff --check. I checked the effective fixture
+  attributes and line endings. I did not stage, commit, or push.
+- **Open questions:** Mike still needs to run the required final Part 3 check.
+  I prepared an approval message, but have not sent it or recorded final results
+  in TEAM_NOTES.md. Proposed commits: the LF attribute rule first, then my
+  separate review and verification log.
+
+## 2026-10-31 - Publishing my review and LF fixture rule
+
+- **Partner directing:** Katie (ksteve3).
+- **Agent used:** Codex.
+- **What I did:** I reported that Mike completed his final Part 3 verification:
+  5/6 correct AND PASS, exit 0, behavior_preserved=true. This is Mike's reported
+  result, not a new test run by me. I authorized the two specified commits and
+  their push. I left TEAM_NOTES.md and README.md to Mike.
+- **Files changed:** .gitattributes in the first commit; only worklog/katie.md
+  in the second. I preserved the earlier review and evaluation entries above.
+- **Commit hash:** LF rule commit eb3ce54fde6776fb431783dc12d6af55f92dd98b.
+  This entry and my pending review are recorded in the following log commit.
+- **Checks and actual results:** I fetched origin and ran
+  `git pull --ff-only origin main`: already up to date at 77ef11e. I reviewed
+  staged diffs and file lists for each commit and excluded unrelated files.
+  I verified the fixture still matches the baseline hash. My previous official
+  evaluation was 5/6 AND PASS; I did not rerun it for this documentation-only
+  publication. I did not change the instructor evaluation files, code, team
+  notes, README, or Mike's log. My supplementary script and cache stay untracked.
+- **Open questions:** Mike is handling the final shared documentation updates.
