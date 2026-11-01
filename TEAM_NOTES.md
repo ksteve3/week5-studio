@@ -17,4 +17,4 @@ Partners: A = Katie (ksteve3); B = Mike (LBXMike)
   extractions remove all three. We use A's names because they say what each
   function returns. Keep the original cleanup order, arithmetic order, zero
   check and strict `>` tie-break so scores match the baseline.
-- Before: 5 / 6. After: ___ / 6. Behavior check: ___
+- Before: 5 / 6. After: 5 / 6. Behavior check: PASS

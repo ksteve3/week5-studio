@@ -1,5 +1,9 @@
 # Week 5 studio: Set the rules, refactor, verify
 
+**Partners:**
+- Katie Stevens (ksteve3)
+- Mike Clopton (LBXMike)
+
 Work in pairs. You will agree on rules for your coding agents
 and refactor one working FAQ search program.
 
