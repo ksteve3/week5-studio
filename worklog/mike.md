@@ -177,3 +177,20 @@ under "Work log".
 - **Open questions:** Katie compares the result with the baseline; then
   we fill in TEAM_NOTES.md (After 5/6, Behavior check PASS), add both
   names to README.md, and submit the repo link on Canvas.
+
+## 2026-10-31 - Final documentation
+
+- **Directing:** Mike
+- **Agent:** Claude Code
+- **What was done:** At Katie's request (by chat), filled in the last
+  TEAM_NOTES.md line ("Before: 5 / 6. After: 5 / 6. Behavior check:
+  PASS") and added both partners' names to README.md, as the submission
+  instructions require. Pulled Katie's eb3ce54 (.gitattributes) and
+  7008ead (her Extraction 2 approval) first.
+- **Files changed:** TEAM_NOTES.md, README.md (commit 0c45874);
+  worklog/mike.md (this entry, separate commit).
+- **Commits:** 0c45874; the commit containing this entry.
+- **Tests:** none rerun; no code changed since the final check
+  (5/6, PASS). eval_cases.json still LF with matching hash.
+- **Open questions:** Katie pulls and verifies, then submits the repo
+  link on Canvas.
